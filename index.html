@@ -12,8 +12,9 @@
 		<header class="box navHeader">
 			<p class="box navTitle">Locations</p>
 		</header> 
+		<input type="text" class="searchField" placeholder="Search for places here..." data-bind="textInput: filterTerm">
 		<div data-bind="foreach: locationsList">
-			<div class="box locationItem" data-bind="event: {mouseover: highlightMarker, mouseout: normalizeMarker}"><p class="locationText" data-bind="text: title"></p></div>
+			<div class="box locationItem" data-bind="click: openInfoWindow, event: {mouseover: highlightMarker, mouseout: normalizeMarker}, visible: visibleBool"><p class="locationText" data-bind="text: title"></p></div>
 		</div>
 	</div>	
 	<main data-bind="adjust350LeftMargin: menuBool, minMargin: windowData">

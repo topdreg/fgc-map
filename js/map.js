@@ -6,7 +6,7 @@ var highlightedIcon;
 // Markers representing the locations of various FGC areas in the Bay Area. 
 var locations = [
 	{
-		title: 'Folsom Street Foundary, SF', 
+		title: 'Folsom Street Foundry, SF', 
 		position: {lat: 37.775972, lng: -122.413925}
 	},
 	{
