@@ -4,8 +4,11 @@ var Location = function(data) {
 	self.title = data.title; 
 	self.position = data.position; 
 	self.visibleBool = ko.observable(true);  
-
 	self.infowindow = new google.maps.InfoWindow();
+	self.infoBool = true;
+	self.picBool = true;
+	
+	// Instantiate marker here.
 	self.marker = new google.maps.Marker({
 		position: self.position,
 		title: self.title,
@@ -14,6 +17,7 @@ var Location = function(data) {
 	});
 
 
+	// Add listeners for if the mouse hovers over the marker.
 	self.marker.addListener('mouseover', function() {
 		this.setIcon(highlightedIcon);
 	});
@@ -32,7 +36,8 @@ var Location = function(data) {
 	};
 
 	/* Infowindow code. */
-	// Info from Foursquare about the location. 
+	
+	// Info from Foursquare API about the location to be placed into an info window. 
 
 	var foursquareSearchURL = 'https://api.foursquare.com/v2/venues/search?ll=' + self.position.lat + ', ' + self.position.lng + '&query=' + self.title + '&limit=1&client_id=XJFBLWTBV3O5NOPX2CDBQ3EXHPZNE1Z1FA05PZIK045TQWYG&client_secret=ADHJZLNBC5W0RSADMUSBNTMZKPYDXT15X5G32YLCGKAQHJHZ&v=20180323';
 	
@@ -69,6 +74,8 @@ var Location = function(data) {
 				else self.tips = "No tips have been registered for this area."; 
 			
 
+		}).fail(function() {
+			self.tips = '(Error) The tips system is presently down.'; 
 		});
 
 		// Get a photo. 
@@ -83,15 +90,23 @@ var Location = function(data) {
 
 				var photoInfo = photosData.response.photos.items[0];
 
-				if (photoInfo != undefined)
+				if (photoInfo != undefined) {
 					self.photo =  photoInfo.prefix + '200x200' + photoInfo.suffix;
-				else self.photo = "No photo is available for this place at the moment."; 
-			
-
+					self.picBool = true;
+				}
+				else self.picBool = false;
+		
+		}).fail(function() {
+			self.picBool = false;
 		});
 		
+		self.infoBool = true;
+
+	}).fail(function() {;
+		self.infoBool = false;
 	});
 
+	// Show an info window for when a marker is clicked on directly.
 	self.marker.addListener('click', function() {
 		setInfoWindow();
 		self.infowindow.open(map, this); 
@@ -99,6 +114,7 @@ var Location = function(data) {
 		setTimeout(function(){ self.marker.setAnimation(null); } , 1500);
 	});
 
+	// Function to be used for opening an infowindow when an item in the sidebar is clicked.
 	self.openInfoWindow = function() {
 		setInfoWindow(); 
 		self.infowindow.open(map, self.marker);
@@ -106,11 +122,13 @@ var Location = function(data) {
 		setTimeout(function(){ self.marker.setAnimation(null); } , 1500);
 	};
 
+	// Initialize marker.
 	self.marker.setMap(map); 
 	bounds.extend(self.marker.position); 
 
 	map.fitBounds(bounds);
 
+	// Functions to be used for when a user types stuff into the search field.
 	self.showMarker = function() {
 		self.marker.setMap(map); 
 		bounds.extend(self.marker.position); 
@@ -121,7 +139,16 @@ var Location = function(data) {
 	};
 
 	function setInfoWindow() {
-		var contentString = 
+		var contentString = ''; 
+		var picString = ''; 
+
+		if (self.infoBool === false) 
+			contentString = "Foursquare API failed to load."
+		else {
+			if (self.picBool === true) 
+				picString = '<img src="' + self.photo + '">';
+			contentString = 
+			'<br>' +
 			'<div style="display: flex">' + 
 				'<div style="width: 300px">' +
 					'<strong id="venueName">' + self.title + '</strong>' +
@@ -129,12 +156,14 @@ var Location = function(data) {
 					'<div id="venueLocation">' + self.locationInfo + '</div>' + 
 					'<br>' + 
 					'<div id="venueTips">' + self.tips + '</div>' +
+					'<br><br>' +
+					'<p>Data provided by Foursquare</p>' +
 				'</div>' + 
 				'<div>' + 
-					'<img src="' + self.photo + '">'
+					picString + 
 				'</div>' +
 			'</div>';  
-
+		}
 		self.infowindow.setContent(contentString); 
 	}
 };
@@ -182,6 +211,7 @@ var ViewModel = function() {
 		self.locationsList.push( new Location(location) ); 
 	});
 
+	// Filter location items in the sidebar if the user types text into the search field. 
 	self.filterTerm = ko.observable("");
 
 	ko.computed(function() {

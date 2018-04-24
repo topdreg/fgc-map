@@ -13,7 +13,7 @@
 			<p class="box navTitle">Locations</p>
 		</header> 
 		<input type="text" class="searchField" placeholder="Search for places here..." data-bind="textInput: filterTerm">
-		<div data-bind="foreach: locationsList">
+		<div data-bind="foreach: locationsList.sort(function(left, right) { return left.title == right.title ? 0 : (left.title < right.title ? -1 : 1) })">
 			<div class="box locationItem" data-bind="click: openInfoWindow, event: {mouseover: highlightMarker, mouseout: normalizeMarker}, visible: visibleBool"><p class="locationText" data-bind="text: title"></p></div>
 		</div>
 	</div>	
@@ -24,10 +24,11 @@
 		</header>
 		<div id="map"></div> 
 	</main> 
-  <script src="js/libs/bower_components/knockout/dist/knockout.js"></script>
+  <script src="js/libs/knockout.js"></script>
   <script src="js/libs/jquery.min.js"></script>
+	<script src="js/locations.js"></script>
 	<script src="js/map.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsgRMCaEpEl2Ly06pvMUd94qVISRK3mgI&v=3&callback=initMap"></script>
   <script src="js/app.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsgRMCaEpEl2Ly06pvMUd94qVISRK3mgI&v=3&callback=initMap" onerror="googleMapsAPIError()"></script>
 </body>
 </html>
