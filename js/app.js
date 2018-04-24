@@ -159,7 +159,7 @@ var Location = function(data) {
 					'<br><br>' +
 					'<p>Data provided by Foursquare</p>' +
 				'</div>' +
-				'<div>' +
+				'<div style="margin-left: 20px">' +
 					picString +
 				'</div>' +
 			'</div>';
