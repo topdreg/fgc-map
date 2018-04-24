@@ -1,4 +1,4 @@
-// Markers representing the locations of various FGC areas in the Bay Area. 
+// Markers representing the locations of various FGC areas in the Bay Area.
 var locations = [
     {
         title: 'Folsom Street Foundry, SF',
