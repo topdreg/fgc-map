@@ -10,10 +10,11 @@ The map displays markers representing regularly visited locations for fighting g
 There is also a side navigation bar that the user can use to interact with the markers. If the user wishes to search for a place, there is a search query input field, which as more locations continue to be added should prove useful. The application is also responsive - the side navigation bar will retract or expand depending on the size of the screen, unless the hamburger-like icon was clicked.
 
 ## Technologies Used 
-* HTML/CSS 
+* HTML/CSS
 * Flexbox
 * Javascript
 * JQuery/AJAX 
 * Knockdown.js 
 * Google Maps API
-*Foursquare API
+* Foursquare API
+
