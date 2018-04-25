@@ -5,8 +5,8 @@ This application, developed as a project for Udacity's FullStack Developer Nanod
 To run the application, just go to https://topdreg.github.io/fgc-map/. Alternatively, clone the repository and run index.html on your local computer. 
 
 <h2>How It Works</h2>
-The map displays markers representing regularly visited locations for fighting game enthusiasts. If the marker is clicked, an infowindow pops up showing some information about the place. Furthermore, the markers change color or bounce depending on whether the marker is hovered over or clicked. 
-
+The map displays markers representing regularly visited locations for fighting game enthusiasts. If the marker is clicked, an infowindow pops up showing some information about the place. Furthermore, the markers change color or bounce depending on whether the marker is hovered over or clicked.  
+<br><br>
 There is also a side navigation bar that the user can use to interact with the markers. If the user wishes to search for a place, there is a search query input field, which as more locations continue to be added should prove useful. The application is also responsive - the side navigation bar will retract or expand depending on the size of the screen, unless the hamburger-like icon was clicked.
 
 <h2>Technologies Used</h2> 
