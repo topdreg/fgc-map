@@ -23,7 +23,7 @@ There is also a side navigation bar that the user can use to interact with the m
 A marker here is highlighted by hovering over its list item in the navigation bar.
 
 ![](infowindow.png)
-Infowindow is displayed due to clicking on the marker directly. The infowindow could also be opened by clicking on an item in the navigation bar.
+Infowindow is displayed due to clicking on the marker directly. The infowindow could also be opened by clicking on an item in the navigation bar. Additionally, the letter 'O' has been entered into the search bar, narrowing the number of markers and names that appear.
 
 ![](sidebar-hide.png)
 
