@@ -3,3 +3,12 @@ This application, developed as a project for Udacity's FullStack Developer Nanod
 
 <h2>Getting Started</h2> 
 To run the application, just go to https://topdreg.github.io/fgc-map/. Alternatively, clone the repository and run index.html on your local computer. 
+
+<h2>Technologies Used</h2> 
+* HTML/CSS
+* Flexbox
+* Javascript
+* JQuery 
+* Knockdown.js 
+* Google Maps API
+* Foursquare API 
