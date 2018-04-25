@@ -148,21 +148,22 @@ var Location = function(data) {
 			if (self.picBool === true)
 				picString = '<img src="' + self.photo + '">';
 			contentString =
-			'<br>' +
-			'<div style="display: flex">' +
-				'<div style="width: 300px">' +
-					'<strong id="venueName">' + self.title + '</strong>' +
-					'<br><br>' +
-					'<div id="venueLocation">' + self.locationInfo + '</div>' +
-					'<br>' +
-					'<div id="venueTips">' + self.tips + '</div>' +
-					'<br><br>' +
-					'<p>Data provided by Foursquare</p>' +
-				'</div>' +
-				'<div style="margin-left: 20px">' +
-					picString +
-				'</div>' +
-			'</div>';
+			'<div style="width: 400px">' +
+				'<br>' +
+				'<div style="display: flex">' +
+					'<div style="width: 300px">' +
+						'<strong id="venueName">' + self.title + '</strong>' +
+						'<br><br>' +
+						'<div id="venueLocation">' + self.locationInfo + '</div>' +
+						'<br>' +
+						'<div id="venueTips">' + self.tips + '</div>' +
+						'<br><br>' +
+						'<p>Data provided by Foursquare</p>' +
+					'</div>' +
+					'<div style="margin-left: 20px">' +
+						picString +
+					'</div>' +
+				'</div>';
 		}
 		self.infowindow.setContent(contentString);
 	}
@@ -243,7 +244,7 @@ ko.bindingHandlers.slide = {
 
 		if (valueUnwrapped == true) {
 			if ($(element).width() == 0)
-				$(element).width(350);
+				$(element).width(275);
 			else
 				$(element).width(0);
 		}
@@ -252,15 +253,15 @@ ko.bindingHandlers.slide = {
 
 
 // Handler deals with the content if the hamburger menu is clicked.
-ko.bindingHandlers.adjust350LeftMargin = {
+ko.bindingHandlers.adjustLeftMargin = {
 	update: function(element, valueAccessor) {
 		var value = valueAccessor();
 		var valueUnwrapped = ko.unwrap(value);
 		if (valueUnwrapped == true) {
-			if ($(element).css("margin-left") == '350px')
+			if ($(element).css("margin-left") == '275px')
 				$(element).css("margin-left", "0px");
 			else
-				$(element).css("margin-left", "350px");
+				$(element).css("margin-left", "275px");
 		}
 		// Reset the boolean variable of the click event to false.
 		value(false);
@@ -278,10 +279,10 @@ ko.bindingHandlers.minMargin = {
 		if (valueUnwrapped.clickBool == true) {
 			if (valueUnwrapped.windowSize > 770) {
 				if ($(element).css("margin-left") == '0px')
-					$(element).css("margin-left", "350px");
+					$(element).css("margin-left", "275px");
 			}
 			else {
-				if ($(element).css("margin-left") == '350px')
+				if ($(element).css("margin-left") == '275px')
 					$(element).css("margin-left", "0px");
 			}
 		}
@@ -297,10 +298,10 @@ ko.bindingHandlers.minSlide = {
 		if (valueUnwrapped.clickBool == true) {
 			if (valueUnwrapped.windowSize > 770) {
 				if ($(element).width() == 0)
-					$(element).width(350);
+					$(element).width(275);
 			}
 			else {
-					if ($(element).width() == 350)
+					if ($(element).width() == 275)
 						$(element).width(0);
 			}
 		}

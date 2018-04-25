@@ -4,7 +4,7 @@ var normalIcon;
 var highlightedIcon;
 
 function googleMapsAPIError() {
-	alert("An error has occurred with the Google Maps API. Please come back another time.");	
+	alert("An error has occurred with the Google Maps API. Please come back another time.");
 }
 
 function initMap() {
@@ -35,5 +35,5 @@ function makeMarkerIcon(markerColor) {
 	  anchor: new google.maps.Point(10, 34),
 	  scaledSize: new google.maps.Size(21,34)
 	};
-	return markerImage; 
-} 
+	return markerImage;
+}
