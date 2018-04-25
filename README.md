@@ -19,4 +19,4 @@ There is also a side navigation bar that the user can use to interact with the m
 * Foursquare API
 
 ## Screenshots
-[](highlight.png)
+![](highlight.png)
