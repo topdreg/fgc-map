@@ -20,3 +20,5 @@ There is also a side navigation bar that the user can use to interact with the m
 
 ## Screenshots
 ![](highlight.png)
+![](infowindow.png)
+![](sidebar-hide.png)
