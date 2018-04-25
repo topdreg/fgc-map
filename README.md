@@ -5,7 +5,7 @@ This application, developed as a project for Udacity's FullStack Developer Nanod
 To run the application, just go to https://topdreg.github.io/fgc-map/. Alternatively, clone the repository and run index.html on your local computer. 
 
 <h2>Technologies Used</h2> 
-- HTML/CSS
+<li> HTML/CSS </li>
 * Flexbox
 * Javascript
 * JQuery 
