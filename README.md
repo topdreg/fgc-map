@@ -26,4 +26,5 @@ A marker here is highlighted by hovering over its list item in the navigation ba
 Infowindow is displayed due to clicking on the marker directly. The infowindow could also be opened by clicking on an item in the navigation bar.
 
 ![](sidebar-hide.png)
+
 Sidebar is hidden here because the width of the screen is too small.
