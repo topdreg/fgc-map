@@ -32,4 +32,4 @@ Sidebar is hidden here because the width of the screen is too small.
 ## Known Issues/Future Plans
 Decisions on mobile responsiveness for this app is challenging. In the future, if the viewport becomes small, I may re-position the navigation bar to the top of the screen instead. The concern with doing that is that it might seem jarring to the user to see the navigation bar switch between the side and top of the screen. By default, I want the navigation bar at the side of the screen. 
 
-Finally, I will continue to seek locations to add to my application. It's hard to find them, but there around. I may start adding places outside of California. 
+Finally, I will continue to seek locations to add to my application. It's hard to find them, but they're around. I may start adding places outside of California. 
