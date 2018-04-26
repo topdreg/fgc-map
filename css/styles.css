@@ -55,6 +55,7 @@ body { display: flex; }
 	padding: 0;
 	border: 0;
 	text: wrap;
+	cursor: pointer;
 }
 
 .locationItem:hover {

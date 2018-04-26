@@ -253,15 +253,24 @@ ko.bindingHandlers.slide = {
 
 
 // Handler deals with the content if the hamburger menu is clicked.
+// The inclusion of the #map JQuery is to allow the google.maps resize event to occur. 
 ko.bindingHandlers.adjustLeftMargin = {
 	update: function(element, valueAccessor) {
 		var value = valueAccessor();
 		var valueUnwrapped = ko.unwrap(value);
 		if (valueUnwrapped == true) {
-			if ($(element).css("margin-left") == '275px')
+			if ($(element).css("margin-left") == '275px') {
 				$(element).css("margin-left", "0px");
-			else
+				$("#map").width($("#map").width() + 275);
+				google.maps.event.trigger(map, 'resize');
+				$("#map").width("100%");
+			}
+			else {
 				$(element).css("margin-left", "275px");
+				$("#map").width($("#map").width() - 275);
+				google.maps.event.trigger(map, 'resize');
+				$("#map").width("100%");
+			}
 		}
 		// Reset the boolean variable of the click event to false.
 		value(false);
