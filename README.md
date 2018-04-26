@@ -30,8 +30,6 @@ Infowindow is displayed due to clicking on the marker directly. The infowindow c
 Sidebar is hidden here because the width of the screen is too small.
 
 ## Known Issues/Future Plans
-When the user scrolls too far on the map, grey area appears. Somehow, I would like to remove the grey area. However, scouring around the internet, there does not seem to be a perfect solution. Perhaps there is and I have not found it yet. 
-
-Mobile responsiveness for this app is challenging. In the future, if the viewport becomes small, I may re-position the navigation bar to the top of the screen instead. The concern with doing that is that it might seem jarring to the user to see the navigation bar switch between the side and top of the screen. By default, I want the navigation bar at the side of the screen. 
+Decisions on mobile responsiveness for this app is challenging. In the future, if the viewport becomes small, I may re-position the navigation bar to the top of the screen instead. The concern with doing that is that it might seem jarring to the user to see the navigation bar switch between the side and top of the screen. By default, I want the navigation bar at the side of the screen. 
 
 Finally, I will continue to seek locations to add to my application. It's hard to find them, but there around. I may start adding places outside of California. 
