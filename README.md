@@ -1,5 +1,5 @@
 ## Project Description
-This application is a Udacity project I did of a neighborhood map of California identifying areas that the fighting game community (Street Fighter, etc.) regularly meets at to have fun. The inspiration to develop this comes from my own interest in fighting games, and the lack of any good central resource to find areas to play against other fighting game enthusiasts. Thus, this app will be a continuous work in-progress! When I find locations, and if the location has good API data from Foursquare, then I'll update the app with those locations. They aren't easy to find though, in my opinion. 
+This application is a Udacity project I did of a neighborhood map of California identifying areas that the fighting game community (Street Fighter, etc.) regularly meets at to have fun.
 
 ## Getting Started
 To run the application, just go to https://topdreg.github.io/fgc-map/. Alternatively, clone the repository and run index.html on your local computer. 
@@ -30,6 +30,4 @@ Infowindow is displayed due to clicking on the marker directly. The infowindow c
 iPad representation. Sidebar is hidden here because the width of the screen is too small, but it can be opened with the hamburger icon.
 
 ## Known Issues/Future Plans
-Decisions on mobile responsiveness for this app is challenging. In the future, if the viewport becomes small, I may re-position the navigation bar to the top of the screen instead. The concern with doing that is that it might seem jarring to the user to see the navigation bar switch between the side and top of the screen. By default, I want the navigation bar at the side of the screen. 
-
-Finally, I will continue to seek locations to add to my application. It's hard to find them, but they're around. I may start adding places outside of California. 
+Decisions on mobile responsiveness for this app is challenging. In the future, if the viewport becomes small, I may re-position the navigation bar to the top of the screen instead. The concern with doing that is that it might seem jarring to the user to see the navigation bar switch between the side and top of the screen. By default, I want the navigation bar at the side of the screen.
